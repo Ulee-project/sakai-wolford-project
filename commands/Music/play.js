@@ -56,10 +56,8 @@ module.exports = {
     if (urlValid) {
       try {
         songInfo = await ytdl.getInfo(url);
-        const { videoId, title, thumbnail, lengthSeconds, author, channelId } = videoDetails;
         song = {
           title: songInfo.videoDetails.title,
-          thumbnail: songInfo.thumbnails[thumbnail_array_length-1].url,
           channel: songInfo.videoDetails.author.name,
           url: songInfo.videoDetails.video_url,
           playUser: msg.author.id,
@@ -71,11 +69,9 @@ module.exports = {
     } else {
       try {
         const results = await youtube.searchVideos(search, 1);
-
         songInfo = await ytdl.getInfo(results[0].url);
         song = {
           title: songInfo.videoDetails.title,
-          thumbnail: songInfo.thumbnails.videoDetails.url,
           channel: songInfo.videoDetails.author.name,
           url: songInfo.videoDetails.video_url,
           playUser: msg.author.id,
@@ -101,7 +97,7 @@ module.exports = {
             title: "Queued",
             description: `**[${song.title}](${song.url})**`,
             thumbnail: {
-              url: `https://img.youtube.com/vi/${song.id}/maxresdefault.jpg`,
+              url: song.thumbnail,
               timestamp: new Date()
             }
           }
