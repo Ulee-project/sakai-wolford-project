@@ -50,7 +50,7 @@ module.exports.play = async (song, client, message) => {
         title: "Now playing",
         description: `**[${song.title}](${song.url})**`,
         thumbnail: {
-          url: `https://img.youtube.com/vi/${song.id}/maxresdefault.jpg`,
+          url: song.thumbnail,
         timestamp: new Date(),
         }
       }
