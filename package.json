@@ -31,7 +31,9 @@
     "pretty-ms": "^7.0.0",
     "quick.db": "^7.1.2",
     "kitsu.js": "^2.0.0",
-    "animequote": "^1.1.1"
+    "animequote": "^1.1.1",
+    "weather-js": "^2.0.0",
+    "superagent": "^6.1.0"
   },
   "engines": {
     "node": "12.x"
