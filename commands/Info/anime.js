@@ -6,7 +6,7 @@ const fetch = require("node-fetch")
 
 module.exports =  {
   name: "anime",
-  alias:[""],
+  alias:["anime"],
   category: "Info",
   description: "Get the information about any anime",
   usage: "anime <name>",
