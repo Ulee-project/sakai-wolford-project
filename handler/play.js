@@ -6,7 +6,7 @@ module.exports.play = async (song, client, message) => {
   if (!song) {
     queue.channel.leave();
     message.client.queue.delete(message.guild.id);
-    return queue.textChannel.send("🚫 Music queue ended.").catch(console.error);
+    return queue.textChannel.send("**🚫 Music queue ended.**").catch(console.error);
   }
 
   try {

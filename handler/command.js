@@ -13,7 +13,7 @@ module.exports = client => {
       console.log(`(🌴) Loaded commands: ${command.name}`);
      }
   };
-  ["Info", "Music", "Utility", "Admin"].forEach(x =>
+  ["Information", "Music", "Fun", "Utility", "Administrator", "Admin"].forEach(x =>
     load(x)
   );
 };

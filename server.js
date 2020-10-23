@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 
 const axios = require("axios")
-const urls = ["https://sakai-wolford.glitch.me"]
+const urls = ["https://amelia-official.glitch.me"]
 setInterval(function() {
             urls.forEach(url => {
             axios.get(url).then(console.log("Pong at " + Date.now())).catch(() => {});

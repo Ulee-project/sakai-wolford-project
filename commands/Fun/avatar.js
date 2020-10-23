@@ -2,8 +2,8 @@ const Discord = require("discord.js")
 
 module.exports =  {
   name: "avatar",
-  alias:["avatar"],
-  category: "Info",
+  alias:["ava"],
+  category: "Fun",
   description: "Retrieve user profiles",
   usage: "avatar <@mention>",
   run: async (client, message, args) => {
@@ -21,9 +21,10 @@ module.exports =  {
 
   
   const embed = new Discord.MessageEmbed()
-  .setTitle(`${user.tag} avatar`)
-  .setDescription(`[Avatar URL of **${user.tag}**](${avatar})`)
-  .setColor(0x1d1d1d)
+  .setTitle(`${user.tag} Avatar!`)
+  .setDescription(`**:small_blue_diamond: Avatar URL of ${user.tag}** 
+[click here](${avatar})`)
+  .setColor(`#00BFFF`)
   .setImage(avatar)
   
   return message.channel.send(embed);

@@ -2,8 +2,9 @@ const Discord = require("discord.js");
 module.exports = {
   name: "snipe",
   alias: ["snipe"],
-  category: "Info",
+  category: "Information",
   description: "Shows the last deleted message.",
+  usage: "snipe <#mentions channel>",
   run: async (client, message, args) => {
     let channel = message.mentions.channels.first() || message.channel;
     let check = await client.db.fetch(`snipe.${channel.id}`);
