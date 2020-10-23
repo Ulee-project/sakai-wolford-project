@@ -17,13 +17,13 @@ module.exports = {
       return message
         .reply(`No argument submitted, Try ${client.prefix}${module.exports.usage}`)
         .catch(console.error);
-    if (!channel) return message.reply("You need to join a voice channel first!").catch(console.error);
+    if (!channel) return message.reply("**❌You need to join a voice channel first!**").catch(console.error);
 
     const permissions = channel.permissionsFor(message.client.user);
     if (!permissions.has("CONNECT"))
-      return message.reply("Cannot connect to voice channel, missing permissions");
+      return message.reply("**❌Cannot connect to voice channel, missing permissions**");
     if (!permissions.has("SPEAK"))
-      return message.reply("I cannot speak in this voice channel, make sure I have the proper permissions!");
+      return message.reply("**❌I cannot speak in this voice channel, make sure I have the proper permissions!**");
 
     const search = args.join(" ");
     const pattern = /^.*(youtu.be\/|list=)([^#\&\?]*).*/gi;
@@ -73,7 +73,7 @@ module.exports = {
       };
       if (serverQueue) {
         serverQueue.songs.push(song);
-        if(channel.id !== serverQueue.channel.id) return message.reply("You need join same voice channel with me!")
+        if(channel.id !== serverQueue.channel.id) return message.reply("**❌You need join same voice channel with me!**")
         message.channel
             .send(`✅ **${song.title}** has been added to the queue by ${message.author}`)
             .catch(console.error);

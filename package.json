@@ -1,5 +1,5 @@
 {
-  "name": "music-bot-example",
+  "name": "Amelia",
   "version": "1.0.0",
   "description": "A Music Discord Bot example written in Javascript using Discord.js library.",
   "main": "server.js",
@@ -33,7 +33,13 @@
     "kitsu.js": "^2.0.0",
     "animequote": "^1.1.1",
     "weather-js": "^2.0.0",
-    "superagent": "^6.1.0"
+    "superagent": "^6.1.0",
+    "imageapi.js": "^1.0.19",
+    "lyrics-finder": "^21.4.0",
+    "node-fetch": "^2.6.1",
+    "canvacord": "^5.0.6",
+    "something-random-on-discord": "^0.0.1",
+    "google-translate": "^3.0.0"
   },
   "engines": {
     "node": "12.x"
@@ -45,5 +51,6 @@
     "discord.js",
     "discord bot",
     "music bot"
-  ]
+  ],
+  "license": "MIT"
 }

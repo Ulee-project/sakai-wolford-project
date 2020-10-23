@@ -4,8 +4,9 @@ const weather = require("weather-js");
 module.exports = {
   name: "weather",
   alias:["weather"],
-  category: "Info",
+  category: "Utility",
   description: "Responds with weather information for a specific location.",
+  usage: "weather <city>",
   run: async(client, message, args) => {
     let city = args.join(" ");
     let degreetype = "C"; // You can change it to F. (fahrenheit.)

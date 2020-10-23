@@ -5,6 +5,6 @@
   "restart": {
     "exclude": ["^public/", "^dist/"],
     "include": ["\\.js$", "\\.json", "\\.html", "\\.txt"]
-  }, 
-  "throttle": 8640000 
+  },
+  "throttle": 86400000
 }

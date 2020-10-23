@@ -13,19 +13,19 @@ module.exports = {
     const { channel } = msg.member.voice;
     if (!args.length)
       return msg.reply(
-        `No argument submitted. Try ${client.prefix}${module.exports.usage}`
+        `**❌No argument submitted. Try ${client.prefix}${module.exports.usage}**`
       );
     if (!channel)
       return msg
-        .reply("You need to join a voice channel first!")
+        .reply("**❌You need to join a voice channel first!**")
         .catch(console.error);
 
     const permissions = channel.permissionsFor(client.user);
     if (!permissions.has("CONNECT"))
-      return msg.reply("Cannot connect to voice channel, missing permissions");
+      return msg.reply("**❌Cannot connect to voice channel, missing permissions**");
     if (!permissions.has("SPEAK"))
       return msg.reply(
-        "I cannot speak in this voice channel, make sure I have the proper permissions!"
+        "**❌I cannot speak in this voice channel, make sure I have the proper permissions!**"
       );
 
     const search = args.join(" ");
@@ -80,7 +80,7 @@ module.exports = {
       } catch (error) {
         console.error(error);
         return msg
-          .reply("No video was found with a matching title")
+          .reply("**❌No video was found with a matching title**")
           .catch(console.error);
       }
     }
@@ -88,13 +88,13 @@ module.exports = {
     if (serverQueue) {
       //return if member voice not same as bot
       if (channel.id !== serverQueue.channel.id)
-        return msg.reply("You need join same voice channel with me!");
+        return msg.reply("**❌You need join same voice channel with me!**");
       serverQueue.songs.push(song);
       return serverQueue.textChannel
         .send({
           embed: {
             color: 0x7289da,
-            title: "Queued",
+            title: "Add to Queue",
             description: `**[${song.title}](${song.url})**`,
             thumbnail: {
               url: song.thumbnail,

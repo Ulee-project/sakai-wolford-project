@@ -6,21 +6,21 @@ const fetch = require("node-fetch")
 
 module.exports =  {
   name: "anime",
-  alias:["anime"],
-  category: "Info",
+  alias:["ani"],
+  category: "Information",
   description: "Get the information about any anime",
   usage: "anime <name>",
   run: async (client, message, args) => {
     //checking args
    if (!args[0]) {
-     return message.channel.send("Please Give us the name of anime");
+     return message.channel.send("**❌Please Give us the name of anime**");
       
     }
     //main part
         var search = message.content.split(/\s+/g).slice(1).join(" ");
         kitsu.searchAnime(search).then(async result => {
             if (result.length === 0) {
-                return message.channel.send(`No results found for **${search}**!`);
+                return message.channel.send(`**❌No results found for** \`${search}!\``);
             }
           
           var anime = result[0]

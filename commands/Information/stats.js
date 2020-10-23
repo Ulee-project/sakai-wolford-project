@@ -2,8 +2,9 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
   name: "stats",
   alias:["st"],
-  category: "Info",
+  category: "Information",
   description: "Display bot stats",
+  usage: "stats",
   run: async (client, message) => {
     const serverQueue = client.queue.get(message.guild.id);
     const uptime = require("pretty-ms")(client.uptime, { verbose:true})
@@ -11,7 +12,7 @@ module.exports = {
     let lup;
     const mbed = new MessageEmbed()
     .setTitle(`${client.user.username} music stats`)
-    .setFooter("© Client Developer 2020")
+    .setFooter(`© ${client.user.username}`)
     .setColor("RANDOM")
     .addField("Uptime", uptime)
     if (!serverQueue) return message.channel.send(mbed).catch(console.error);
