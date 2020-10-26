@@ -1,0 +1,1 @@
+exports.GENIUS_API_KEY = 'qpL5deC13tL-sPfWCoNF50wZ3zj9w06xxqYH7-Be3zqORl1jAj0j1QKlr0T6l7wf';

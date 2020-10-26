@@ -1,5 +1,5 @@
 {
-  "name": "Amelia",
+  "name": "Sakai-Wolford",
   "version": "1.0.0",
   "description": "A Music Discord Bot example written in Javascript using Discord.js library.",
   "main": "server.js",
@@ -38,8 +38,9 @@
     "lyrics-finder": "^21.4.0",
     "node-fetch": "^2.6.1",
     "canvacord": "^5.0.6",
-    "something-random-on-discord": "^0.0.1",
-    "google-translate": "^3.0.0"
+    "google-translate": "^3.0.0",
+    "mathjs": "^7.5.1",
+    "wikijs": "^6.0.0"
   },
   "engines": {
     "node": "12.x"

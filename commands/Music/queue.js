@@ -14,7 +14,7 @@ module.exports = {
     let queueEmbed = new MessageEmbed()
       .setTitle("Music Queue")
       .setDescription(serverQueue.songs.map((song, index) => `${index + 1}. ${song.title}`))
-      .setColor("RANDOM")
+      .setColor(0x7289da)
       .setFooter(`© ${client.user.username}`)
 
     queueEmbed.setTimestamp();

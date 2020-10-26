@@ -3,5 +3,5 @@ module.exports = client => {
     `(👌) Ready on ${client.guilds.cache.size} servers, for a total of ${client.users.cache.size} users.`
   );
   
-  client.user.setActivity(`a!help | Stay Classy | ${client.guilds.cache.size} servers`);
+  client.user.setActivity(`s!help ${client.guilds.cache.size} servers!`, { type: "LISTENING" },5000)
 }
