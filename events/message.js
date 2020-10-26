@@ -3,6 +3,17 @@ const Discord = require("discord.js");
 module.exports = async (client, msg) => {
   if (msg.author.bot) return;
   if (!msg.guild) return;
+  
+  let prefix;
+    if (msg.channel.type == "text") {
+      let gprefix = await client.db.fetch(`prefix_${msg.guild.id}`);
+      if (gprefix === null) gprefix = "s!";
+      prefix = gprefix;
+    } else {
+      prefix = `s!`;
+    }
+
+   client.prefix = prefix;
 
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
   const embed = new Discord.MessageEmbed()

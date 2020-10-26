@@ -22,7 +22,7 @@ module.exports = {
     const Embed = new MessageEmbed()
       .setTitle(`${statusAnimation.meme} | Meme from reddit/${subreddit}`)
       .setURL(`https://reddit.com/r/${subreddit}`)
-      .setColor("RANDOM")
+      .setColor("#00BFFF")
       .setFooter(`Powered by Reddit`)
       .setImage(img);
     message.channel.send(Embed);

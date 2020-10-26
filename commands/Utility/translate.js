@@ -45,7 +45,7 @@ module.exports = {
             `Translated.`,
             message.author.displayAvatarURL({ dynamic: true })
           )
-          .setColor("BLUE")
+          .setColor("#00BFFF")
           .addField("Original Text", "```" + text + "```")
           .addField(
             "Translated Text",

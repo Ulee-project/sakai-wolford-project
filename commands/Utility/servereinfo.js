@@ -40,7 +40,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setThumbnail(message.guild.iconURL({dynamic : true}))
-            .setColor('#f3f3f3')
+            .setColor('#00BFFF')
             .setAuthor(`${message.guild.name} server stats`,message.guild.iconURL({ dynamic: true }))
             .addFields(
                 {

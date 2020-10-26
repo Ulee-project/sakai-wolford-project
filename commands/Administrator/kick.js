@@ -1,46 +1,68 @@
-const discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
+const db = require('quick.db');
 
 module.exports = {
-  name: "kick",
-  alias:["kick"],
-  category: "Administrator",
-  description: "Kick anyone with one shot xD",
-  usage: "kick <@user> <raeson>",
-  run: (client, message, args) => {
-    
-    if(!message.member.hasPermission("KICK_MEMBERS")) {
-      return message.channel.send(`**${message.author.username}, ❌You do not have enough permission to use this command**`)
+        name: "kick",
+        category: "Administrator",
+        description: "Kicks the user",
+        usage: "kick <@mention | user ID> <reason>",
+        alias: ["k"],
+    run: async (client, message, args) => {
+        try {
+            if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("**❌You Do Not Have Permissions To Kick Members!** - `KICK_MEMBERS`");
+            if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send("**❌I Do Not Have Permissions To Kick Members!** - `KICK_MEMBERS`");
+
+            if (!args[0]) return message.channel.send('**❌Enter A User To Kick!**')
+
+            var kickMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.username.toLowerCase() === args[0].toLocaleLowerCase()) || message.guild.members.cache.find(ro => ro.displayName.toLowerCase() === args[0].toLocaleLowerCase());
+            if (!kickMember) return message.channel.send("**❌User Is Not In The Guild!**");
+
+            if (kickMember.id === message.member.id) return message.channel.send("**❌You Cannot Kick Yourself!**")
+
+            if (!kickMember.kickable) return message.channel.send("**❌Cannot Kick This User!**")
+            if (kickMember.user.bot) return message.channel.send("**❌Cannot Kick A Bot!**")
+
+            var reason = args.slice(1).join(" ");
+            try {
+                const sembed2 = new MessageEmbed()
+                    .setColor("RED")
+                    .setDescription(`**Hello, You Have Been Kicked From ${message.guild.name} for - ${reason || "No Reason!"}**`)
+                    .setFooter(message.guild.name, message.guild.iconURL())
+                kickMember.send(sembed2).then(() =>
+                    kickMember.kick()).catch(() => null)
+            } catch {
+                kickMember.kick()
+            }
+            if (reason) {
+            var sembed = new MessageEmbed()
+                .setColor("RED")
+                .setAuthor(message.guild.name, message.guild.iconURL())
+                .setDescription(`**${kickMember.user.username}** has been kicked for ${reason}`)
+            message.channel.send(sembed);
+            } else {
+                var sembed2 = new MessageEmbed()
+                .setColor("RED")
+                .setAuthor(message.guild.name, message.guild.iconURL())
+                .setDescription(`**${kickMember.user.username}** has been kicked`)
+            message.channel.send(sembed2);
+            }
+            let channel = db.fetch(`modlog_${message.guild.id}`)
+            if (!channel) return;
+
+            const embed = new MessageEmbed()
+                .setAuthor(`Member Kicked`, message.guild.iconURL())
+                .setDescription(`**${kickMember.user.username}** ${kickMember.id}`)
+                .setColor("#ff0000")
+                .setThumbnail(kickMember.user.displayAvatarURL({ dynamic: true }))
+                .setFooter(message.guild.name, message.guild.iconURL())
+                .addField("**Reason**", `${reason || "**No Reason**"}`)
+                .setTimestamp();
+
+            var sChannel = message.guild.channels.cache.get(channel)
+            if (!sChannel) return;
+            sChannel.send(embed)
+        } catch (e) {
+            return message.channel.send(`**${e.message}**`)
+        }
     }
-    
-    if(!message.guild.me.hasPermission("KICK_MEMBERS")) {
-      return message.channel.send(`**${message.author.username}, ❌I do not have enough permission to use this command**`)
-    }
-    
-    let target = message.mentions.members.first();
-    
-    if(!target) {
-      return message.channel.send(`**${message.author.username}, ❌Please mention the person who you want to kick**`)
-    }
-    
-    if(target.id === message.author.id) {
-     return message.channel.send(`**${message.author.username}, ❌You can not kick yourself**`)
-    }
-    
-  if(!args[1]) {
-    return message.channel.send(`**${message.author.username}, ❌Please Give Reason to kick**`)
-  }
-    
-    let embed = new discord.MessageEmbed()
-    .setTitle("Action: Kick")
-    .setDescription(`Kicked ${target} (${target.id})`)
-    .setColor("#ff2050")
-    .setFooter(`Kicked by ${message.author.username}`);
-    
-    message.channel.send(embed)
-    
-    target.kick(args[1]);
-    
-    
-    
-  }
 }

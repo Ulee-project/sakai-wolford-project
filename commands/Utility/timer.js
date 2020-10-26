@@ -44,7 +44,7 @@ module.exports = {
         .setDescription(
           `Your timer for ${args[0]} (${ms(args[0])}MS) has finished!`
         )
-        .setColor(`BLUE`);
+        .setColor(`#00BFFF`);
       message.author.send(Embed);
       Timers.delete(message.author.id + " G " + message.guild.name);
     }, ms(args[0]));

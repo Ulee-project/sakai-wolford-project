@@ -1,10 +1,10 @@
 const { MessageEmbed } = require("discord.js");
 module.exports = {
-  name: "emoji",
+  name: "emojis",
   alias:["emot"],
   description: "View all emojis in the guild",
   category: "Utility",
-  usage: "emoji",
+  usage: "emojis",
   run: async (client, message, args) => {
     let Emojis = "";
     let EmojisAnimated = "";
@@ -29,7 +29,7 @@ module.exports = {
       .setDescription(
         `**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n**Over all emojis [${OverallEmojis}]**`
       )
-      .setColor(`RANDOM`);
+      .setColor(`#00BFFF`);
     message.channel.send(Embed);
   },
 };

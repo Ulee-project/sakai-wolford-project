@@ -74,6 +74,7 @@ module.exports = {
           title: songInfo.videoDetails.title,
           channel: songInfo.videoDetails.author.name,
           url: songInfo.videoDetails.video_url,
+          thumbnail: songInfo.videoDetails.thumbnail.thumbnails[0].url,
           playUser: msg.author.id,
           vote: []
         };

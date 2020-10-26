@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.PORT);
 
 const axios = require("axios")
-const urls = ["https://amelia-official.glitch.me"]
+const urls = ["https://sakai-wolford.glitch.me"]
 setInterval(function() {
             urls.forEach(url => {
             axios.get(url).then(console.log("Pong at " + Date.now())).catch(() => {});
@@ -23,7 +23,6 @@ setInterval(function() {
 const { prefix } = require("./config.json");
 client.aliases = new discord.Collection();
 client.commands = new discord.Collection();
-client.prefix = prefix;
 client.db = require("quick.db");
 client.queue = new Map();
 client.hastebin = async text => {

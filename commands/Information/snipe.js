@@ -12,7 +12,7 @@ module.exports = {
       return message.channel.send(`There's Nothing To Snipe!`);
 
     let embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
+      .setColor("#00BFFF")
       .setAuthor(`${check.user}`)
       .setDescription(`${check.content}`);
     message.channel.send(embed);
