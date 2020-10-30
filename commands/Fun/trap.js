@@ -14,9 +14,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setColor("#00BFFF")
-      .setAuthor(`Its a TRAP`, message.guild.iconURL({ dynamic: true }))
-      .setDescription(`**:small_blue_diamond: Click below if the image failed to load.** 
-[Image URL](${data.url})`)
+      .setDescription(`Its a TRAP`)
       .setImage(`${data.url}`)
       .setFooter(`Powered by nekos.life`)
     

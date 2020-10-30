@@ -16,10 +16,8 @@ module.exports = {
     const kissed = message.author.id === user.id ? "themselfs" : user.username;
 
     const embed = new MessageEmbed()
-      .setAuthor(`${message.author.username} has Kissed ${kissed}`, message.guild.iconURL({ dynamic: true }))
       .setColor("#00BFFF")
-      .setDescription(`**:small_blue_diamond: Click below if the image failed to load.** 
-[Image URL](${data.url})`)
+      .setDescription(`${message.author} has Kissed **${kissed}**`)
       .setImage(`${data.url}`)
       .setFooter(`Powered by nekos.life`)
     

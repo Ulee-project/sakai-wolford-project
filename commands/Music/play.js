@@ -96,7 +96,7 @@ module.exports = {
           embed: {
             color: 0x7289da,
             title: "Add to Queue",
-            description: `**[${song.title}](${song.url})**`,
+            description: `**[${song.title}](${song.url}) Requested by: <@${song.playUser}>**`,
             thumbnail: {
               url: song.thumbnail,
               timestamp: new Date()

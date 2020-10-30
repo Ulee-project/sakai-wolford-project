@@ -68,7 +68,7 @@ module.exports = {
         )
         .setColor("#00BFFF")
         .setFooter(
-          `© ${client.user.username} Discord server. | ${client.prefix}invite | Total Commands: ${client.commands.size}.`,
+          `© ${client.user.username} Discord server. | ${client.prefix}donate | Total Commands: ${client.commands.size}.`,
           client.user.displayAvatarURL({ format: "png" })
         );
 

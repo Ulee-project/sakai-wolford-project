@@ -1,5 +1,10 @@
 const ytdlDiscord = require("ytdl-core-discord");
-
+const statusAnimation = {
+YouTube: `<:YouTube:735293606973276180>`
+};
+const Statustext = {
+  YouTube: "YouTube"
+};
 module.exports.play = async (song, client, message) => {
   const queue = client.queue.get(message.guild.id);
   const Discord = require("discord.js");
@@ -47,8 +52,8 @@ module.exports.play = async (song, client, message) => {
     var playingMessage = await queue.textChannel.send({
       embed: {
         color: 0x7289da,
-        title: "Now playing",
-        description: `**[${song.title}](${song.url})**`,
+        title: `${statusAnimation.YouTube} Now playing`,
+        description: `**[${song.title}](${song.url}) Requested by: <@${song.playUser}>**`,
         thumbnail: {
           url: song.thumbnail,
         timestamp: new Date(),
