@@ -15,9 +15,7 @@ module.exports = {
     const embed = new MessageEmbed()
       .setFooter(`Powered by nekos.life`)
       .setColor("#00BFFF")
-      .setAuthor(`NEKO`, message.guild.iconURL({ dynamic: true }))
-      .setDescription(`**:small_blue_diamond: Click below if the image failed to load.** 
-[Image URL](${data.url})`)
+      .setDescription(`NEKO`)
       .setImage(`${data.url}`)
 
 

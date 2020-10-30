@@ -15,10 +15,8 @@ module.exports = {
     const hugged = message.author.id === user.id ? "themselfs" : user.username;
 
     const embed = new MessageEmbed()
-      .setAuthor(`${message.author.username} has hugged ${hugged}`, message.guild.iconURL({ dynamic: true }))
       .setColor("#00BFFF")
-      .setDescription(`**:small_blue_diamond: Click below if the image failed to load.** 
-[Image URL](${data.url})`)
+      .setDescription(`${message.author} has hugged **${hugged}**`)
       .setImage(`${data.url}`)
       .setFooter(`Powered by nekos.life`)
 

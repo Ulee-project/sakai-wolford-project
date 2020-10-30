@@ -16,9 +16,7 @@ module.exports = {
 
     const embed = new MessageEmbed()
       .setColor("#00BFFF")
-      .setAuthor(`${message.author.username} has Tickled ${tickle}`, message.guild.iconURL({ dynamic: true }))
-      .setDescription(`**:small_blue_diamond: Click below if the image failed to load.** 
-[Image URL](${data.url})`)
+      .setDescription(`${message.author} Tickled **${tickle}**`)
       .setImage(`${data.url}`)
       .setFooter(`Powered by nekos.life`)
 

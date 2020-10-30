@@ -1,5 +1,6 @@
 dependencies:
   '@discordjs/opus': 0.3.2
+  '@k3rn31p4nic/google-translate-api': 1.1.1
   animequote: 1.1.1
   axios: 0.20.0
   bindings: 1.5.0
@@ -12,7 +13,6 @@ dependencies:
   ffmpeg-static: 4.2.7
   fs: 0.0.2
   genius-api: github.com/jahrlin/genius-api/82ba446951a9f30cf2823e57b1e2091aa76a7ea0
-  google-translate: 3.0.0
   http: 0.0.0
   imageapi.js: 1.0.19
   kitsu.js: 2.0.0
@@ -87,6 +87,47 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-T/ubykd4Xi19vDfw7/Oe+iTQBJ28yMI2PQAzK+Zue0PB9OpEYaeIXU7k5255061RwL+rHX9w7P/P2of+x2Vu2A==
+  /@k3rn31p4nic/google-translate-api/1.1.1:
+    dependencies:
+      got: 11.8.0
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    resolution:
+      integrity: sha512-vg3zLYXhUmdwrNxmoKOfYSJzB8lHKDnqR7L/SYQQKCYkxsj2syK/cJMAcK5fQC0hfwgexxUaWhR2p2gGEe3nVw==
+  /@sindresorhus/is/4.0.0:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-FyD2meJpDPjyNQejSjvnhpgI/azsQkA4lGbuu5BQZfjvJ9cbRZXzeWL2HceCekW4lixO9JPesIIQkSoLjeJHNQ==
+  /@szmarczak/http-timer/4.0.5:
+    dependencies:
+      defer-to-connect: 2.0.0
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-PyRA9sm1Yayuj5OIoJ1hGt2YISX45w9WcFbh6ddT0Z/0yaFxOtGLInr4jUfU1EAFVs0Yfyfev4RNwBlUaHdlDQ==
+  /@types/cacheable-request/6.0.1:
+    dependencies:
+      '@types/http-cache-semantics': 4.0.0
+      '@types/keyv': 3.1.1
+      '@types/node': 14.14.6
+      '@types/responselike': 1.0.0
+    dev: false
+    resolution:
+      integrity: sha512-ykFq2zmBGOCbpIXtoVbz4SKY5QriWPh3AjyU4G74RYbtt5yOc5OfaY75ftjg7mikMOla1CTGpX3lLbuJh8DTrQ==
+  /@types/http-cache-semantics/4.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-c3Xy026kOF7QOTn00hbIllV1dLR9hG9NkSrLQgCVs8NF6sBU+VGWjD3wLPhmh1TYAc7ugCFsvHYMN4VcBN1U1A==
+  /@types/keyv/3.1.1:
+    dependencies:
+      '@types/node': 14.14.6
+    dev: false
+    resolution:
+      integrity: sha512-MPtoySlAZQ37VoLaPcTHCu1RWJ4llDkULYZIzOYxlhxBqYPB0RsRlmMU0R6tahtFe27mIdkHV+551ZWV4PLmVw==
   /@types/node/10.17.42:
     dev: false
     resolution:
@@ -95,6 +136,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jeYJU2kl7hL9U5xuI/BhKPZ4vqGM/OmK6whiFAXVhlstzZhVamWhDSmHyGLIp+RVyuF9/d0dqr2P85aFj4BvJg==
+  /@types/node/14.14.6:
+    dev: false
+    resolution:
+      integrity: sha512-6QlRuqsQ/Ox/aJEQWBEJG7A9+u7oSYl3mem/K8IzxXG/kAGbV1YPD9Bg9Zw3vyxC/YP+zONKwy8hGkSt1jxFMw==
+  /@types/responselike/1.0.0:
+    dependencies:
+      '@types/node': 14.14.6
+    dev: false
+    resolution:
+      integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==
   /abbrev/1.1.1:
     dev: false
     resolution:
@@ -180,10 +231,6 @@ packages:
       node: '>=0.8'
     resolution:
       integrity: sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
-  /async/3.1.0:
-    dev: false
-    resolution:
-      integrity: sha512-4vx/aaY6j/j3Lw3fbCHNWP0pPaTCew3F6F3hYyl/tHs/ndmV1q7NW9T5yuJ2XAGwdQrP+6Wu20x06U4APo/iQQ==
   /asynckit/0.4.0:
     dev: false
     resolution:
@@ -295,6 +342,26 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
+  /cacheable-lookup/5.0.3:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-W+JBqF9SWe18A72XFzN/V/CULFzPm7sBXzzR6ekkE+3tLG72wFZrBiBZhrZuDoYexop4PHJVdFAKb/Nj9+tm9w==
+  /cacheable-request/7.0.1:
+    dependencies:
+      clone-response: 1.0.2
+      get-stream: 5.2.0
+      http-cache-semantics: 4.1.0
+      keyv: 4.0.3
+      lowercase-keys: 2.0.0
+      normalize-url: 4.5.0
+      responselike: 2.0.0
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-lt0mJ6YAnsrBErpTMWeu5kl/tg9xMAWjavYTN6VQXM1A/teBITuNcccXsCxF0tDQQJf9DfAaX5O4e0zp0KlfZw==
   /camelcase/4.1.0:
     dev: false
     engines:
@@ -373,6 +440,12 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
+  /clone-response/1.0.2:
+    dependencies:
+      mimic-response: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha1-0dyXOSAxTfZ/vrlCI7TuNQI56Ws=
   /code-point-at/1.1.0:
     dev: false
     engines:
@@ -509,12 +582,26 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==
+  /decompress-response/6.0.0:
+    dependencies:
+      mimic-response: 3.1.0
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==
   /deep-extend/0.6.0:
     dev: false
     engines:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
+  /defer-to-connect/2.0.0:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-bYL2d05vOSf1JEZNx5vSAtPuBMkX8K9EUutg7zlKvTqKXHt7RhWJFbmd7qakVuf13i+IkGmp6FwSsONOf6VYIg==
   /delayed-stream/1.0.0:
     dev: false
     engines:
@@ -880,6 +967,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-LANAXHU4w51+s3sxcCLjJfsBi/c=
+  /get-stream/5.2.0:
+    dependencies:
+      pump: 3.0.0
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-nBF+F1rAZVCu/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP/QwPNZHnOlwbTkY6dvtFIzFMSyQXbLoTQPRpA==
   /getpass/0.1.7:
     dependencies:
       assert-plus: 1.0.0
@@ -907,16 +1002,24 @@ packages:
     dev: false
     resolution:
       integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
-  /google-translate/3.0.0:
+  /got/11.8.0:
     dependencies:
-      async: 3.1.0
-      he: 1.2.0
-      request: 2.88.0
-      underscore: 1.9.1
-    deprecated: 'Localize (https://localizejs.com) has deprecated google-translate, as we''ve migrated to using the official @google-cloud/translate package.'
+      '@sindresorhus/is': 4.0.0
+      '@szmarczak/http-timer': 4.0.5
+      '@types/cacheable-request': 6.0.1
+      '@types/responselike': 1.0.0
+      cacheable-lookup: 5.0.3
+      cacheable-request: 7.0.1
+      decompress-response: 6.0.0
+      http2-wrapper: 1.0.0-beta.5.2
+      lowercase-keys: 2.0.0
+      p-cancelable: 2.0.0
+      responselike: 2.0.0
     dev: false
+    engines:
+      node: '>=10.19.0'
     resolution:
-      integrity: sha512-NQrP9gnFBO9LpEAN7Ia4kiyycbubqG+vdmxhQE5hjhAeU6U2n1vM7Kb1wtI3YU7Ghk3+bdfiRiAr6Zhox/UV2w==
+      integrity: sha512-k9noyoIIY9EejuhaBNLyZ31D5328LeqnyPNXJQb2XlJZcKakLqN5m6O/ikhq/0lw56kUYS54fVm+D1x57YC9oQ==
   /graceful-fs/4.2.4:
     dev: false
     resolution:
@@ -973,6 +1076,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==
+  /http-cache-semantics/4.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==
   /http-errors/1.7.2:
     dependencies:
       depd: 1.1.2
@@ -1018,6 +1125,15 @@ packages:
     dev: false
     resolution:
       integrity: sha1-huYybSnF0Dnen6xYSkVon5KfT3I=
+  /http2-wrapper/1.0.0-beta.5.2:
+    dependencies:
+      quick-lru: 5.1.1
+      resolve-alpn: 1.0.0
+    dev: false
+    engines:
+      node: '>=10.19.0'
+    resolution:
+      integrity: sha512-xYz9goEyBnC8XwXDTuC/MZ6t+MrKVQZOk4s7+PaDkwIsQd8IwqvM+0M6bA/2lvG8GHXcPdf+MejTUeO2LCPCeQ==
   /https-proxy-agent/5.0.0:
     dependencies:
       agent-base: 6.0.1
@@ -1134,6 +1250,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
+  /json-buffer/3.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==
   /json-schema-traverse/0.4.1:
     dev: false
     resolution:
@@ -1171,6 +1291,12 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-MT5mvB5cwG5Di8G3SZwuXFastqI=
+  /keyv/4.0.3:
+    dependencies:
+      json-buffer: 3.0.1
+    dev: false
+    resolution:
+      integrity: sha512-zdGa2TOpSZPq5mU6iowDARnMBZgtCqJ11dJROFi6tg6kTn4nuUdU09lFyLFSaHrWqpIJ+EBq4E8/Dc0Vx5vLdA==
   /kitsu.js/2.0.0:
     dependencies:
       node-fetch: 1.7.3
@@ -1240,6 +1366,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+  /lowercase-keys/2.0.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA==
   /lyrics-finder/21.4.0:
     dependencies:
       encoding: 0.1.13
@@ -1318,12 +1450,24 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-RZKhC3EmpBchfTGBVb8fb+RL2cWyw/32lshnsETttkBAyAUXSGHxbEJWWRXc751DrIxG1q04b8QwMbAwkRPpUA==
+  /mimic-response/1.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
   /mimic-response/2.1.0:
     dev: false
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==
+  /mimic-response/3.1.0:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==
   /miniget/1.7.2:
     dev: false
     engines:
@@ -1540,6 +1684,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-CvaGwVMztSMJLOeXPrez7fyfObdZqNUK1cPAEzLHrTybIua9pMdmmPR5YwtfNftIOMv3DPUhFaxsZMNTQO20Kg==
+  /normalize-url/4.5.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
   /npm-bundled/1.1.1:
     dependencies:
       npm-normalize-package-bin: 1.0.1
@@ -1629,6 +1779,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-0CWcCECdMVc2Rw3U5w9ZjqX6ga6ubk1xDVKxtBQPK7wis/0F2r9T6k4ydGYhecl7YUBxBVxhL5oisPsNxAPe2g==
+  /p-cancelable/2.0.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-wvPXDmbMmu2ksjkB4Z3nZWTSkJEb9lqVdMaCKpZUGJG9TMiNp9XcbG3fn9fPKjem04fJMJnXoyFPk2FmgiaiNg==
   /parse-cache-control/1.0.1:
     dev: false
     resolution:
@@ -1735,10 +1891,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==
-  /punycode/1.4.1:
-    dev: false
-    resolution:
-      integrity: sha1-wNWmOycYgArY4esPpSachN1BhF4=
   /punycode/2.1.1:
     dev: false
     engines:
@@ -1763,6 +1915,12 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-A1kFqHekCTM7cz0udomYUoYNWjBebHm/5wzU/XqrBRBNWectVH0QIiN+NEcZ0Dte5hvzHwbr8+XQmguPhJ6WdQ==
+  /quick-lru/5.1.1:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
   /quick.db/7.1.3:
     dependencies:
       better-sqlite3: 7.1.1
@@ -1837,34 +1995,6 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-2cBCniTtxcGUjDpvFfVpw323a83/0RLSGJJY5l5lcomZWhYpU2cuLdsvYqMixvsdLJ9+sTdzEkju8J8ZHDM2nA==
-  /request/2.88.0:
-    dependencies:
-      aws-sign2: 0.7.0
-      aws4: 1.10.1
-      caseless: 0.12.0
-      combined-stream: 1.0.8
-      extend: 3.0.2
-      forever-agent: 0.6.1
-      form-data: 2.3.3
-      har-validator: 5.1.5
-      http-signature: 1.2.0
-      is-typedarray: 1.0.0
-      isstream: 0.1.2
-      json-stringify-safe: 5.0.1
-      mime-types: 2.1.27
-      oauth-sign: 0.9.0
-      performance-now: 2.1.0
-      qs: 6.5.2
-      safe-buffer: 5.2.1
-      tough-cookie: 2.4.3
-      tunnel-agent: 0.6.0
-      uuid: 3.4.0
-    deprecated: 'request has been deprecated, see https://github.com/request/request/issues/3142'
-    dev: false
-    engines:
-      node: '>= 4'
-    resolution:
-      integrity: sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
   /request/2.88.2:
     dependencies:
       aws-sign2: 0.7.0
@@ -1893,6 +2023,16 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
+  /resolve-alpn/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-rTuiIEqFmGxne4IovivKSDzld2lWW9QCjqv80SYjPgf+gS35eaCAjaP54CCwGAwBtnCsvNLYtqxe1Nw+i6JEmA==
+  /responselike/2.0.0:
+    dependencies:
+      lowercase-keys: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-xH48u3FTB9VsZw7R+vvgaKeLKzT6jOogbQhEe/jewwnZgzPcnyWui2Av6JpoYZF/91uueC+lqhWqeURw5/qhCw==
   /rimraf/2.7.1:
     dependencies:
       glob: 7.1.6
@@ -2178,15 +2318,6 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
-  /tough-cookie/2.4.3:
-    dependencies:
-      psl: 1.8.0
-      punycode: 1.4.1
-    dev: false
-    engines:
-      node: '>=0.8'
-    resolution:
-      integrity: sha512-Q5srk/4vDM54WJsJio3XNn6K2sCG+CQ8G5Wz6bZhRZoAe/+TxjWB/GlFAnYEbkYVlON9FMk/fE3h2RLpPXo4lQ==
   /tough-cookie/2.5.0:
     dependencies:
       psl: 1.8.0
@@ -2242,10 +2373,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /underscore/1.9.1:
-    dev: false
-    resolution:
-      integrity: sha512-5/4etnCkd9c8gwgowi5/om/mYO5ajCaOgdzj/oW+0eQV9WxKBDZw5+ycmKmeaTXjInS/W0BzpGLo2xR2aBwZdg==
   /universalify/0.1.2:
     dev: false
     engines:
@@ -2409,6 +2536,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@discordjs/opus': ^0.3.2
+  '@k3rn31p4nic/google-translate-api': ^1.1.0
   animequote: ^1.1.1
   axios: ^0.20.0
   bindings: ^1.5.0
@@ -2421,7 +2549,6 @@ specifiers:
   ffmpeg-static: ^4.2.7
   fs: ^0.0.2
   genius-api: 'github:jahrlin/genius-api'
-  google-translate: ^3.0.0
   http: ^0.0.0
   imageapi.js: ^1.0.19
   kitsu.js: ^2.0.0

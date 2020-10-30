@@ -12,12 +12,13 @@ module.exports = {
       res.json()
     );
 
+    const user = message.mentions.users.first() || message.author;
+    const smug = message.author.id === user.id ? "themselfs" : user.username;
+    
     const embed = new MessageEmbed()
       .setFooter(`Powered by nekos.life`)
       .setColor("#00BFFF")
-      .setAuthor(`SMUG`, message.guild.iconURL({ dynamic: true }))
-      .setDescription(`**:small_blue_diamond: Click below if the image failed to load.** 
-[Image URL](${data.url})`)
+      .setDescription(`${message.author} Smug **${smug}**`)
       .setImage(`${data.url}`)
 
     message.channel.send({ embed });
