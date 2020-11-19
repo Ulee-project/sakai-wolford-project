@@ -1,6 +1,6 @@
-const BaseEmbed = require("../../../BaseEmbed");
+const BaseEmbed = require(".././../BaseEmbed");
 const { formatDate } = require("../../functions");
-const badges = require("../../../badges.json");
+const badges = require(".././../badges.json");
 
 module.exports = {
   name: "userinfo",
