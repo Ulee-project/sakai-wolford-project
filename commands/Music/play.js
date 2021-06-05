@@ -57,12 +57,13 @@ module.exports = {
     if (urlValid) {
       try {
         songInfo = await ytdl.getInfo(url);
+        const convertduration = convertMS(songInfo.videoDetails.lengthSeconds * 1000, { colonNotation: true });
         song = {
           title: songInfo.videoDetails.title,
           channel: songInfo.videoDetails.author.name,
           url: songInfo.videoDetails.video_url,
           thumbnail: songInfo.videoDetails.thumbnail.thumbnails[0].url,
-          duration: convertMS(songInfo.videoDetails.lengthSeconds, { verbose: true, compact: false, secondsDecimalDigits: 0 }),
+          duration: convertduration,
           playUser: msg.author.id,
           vote: []
         };
@@ -73,12 +74,13 @@ module.exports = {
       try {
         const results = await youtube.searchVideos(search, 1);
         songInfo = await ytdl.getInfo(results[0].url);
+        const convertduration = convertMS(songInfo.videoDetails.lengthSeconds * 1000, { colonNotation: true });
         song = {
           title: songInfo.videoDetails.title,
           channel: songInfo.videoDetails.author.name,
           url: songInfo.videoDetails.video_url,
           thumbnail: songInfo.videoDetails.thumbnail.thumbnails[0].url,
-          duration: convertMS(songInfo.videoDetails.lengthSeconds, { verbose: true, compact: false, secondsDecimalDigits: 0 }),
+          duration: convertduration,
           playUser: msg.author.id,
           vote: []
         };
