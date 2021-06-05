@@ -28,7 +28,7 @@
     "libsodium": "^0.7.8",
     "fs": "^0.0.2",
     "bindings": "^1.5.0",
-    "pretty-ms": "^7.0.0",
+    "parse-ms": "^3.0.0",
     "quick.db": "^7.1.2",
     "kitsu.js": "^2.0.0",
     "animequote": "^1.1.1",
