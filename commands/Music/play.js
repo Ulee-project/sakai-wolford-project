@@ -2,6 +2,7 @@ const { play } = require("../../handler/play.js");
 const ytdl = require("ytdl-core");
 const YouTubeAPI = require("simple-youtube-api");
 const youtube = new YouTubeAPI(process.env.YT_KEY);
+const convertMS = require("pretty-ms");
 
 module.exports = {
   name: "play",
@@ -59,7 +60,9 @@ module.exports = {
         song = {
           title: songInfo.videoDetails.title,
           channel: songInfo.videoDetails.author.name,
-          url: songInfo.videoDetails.video_url,
+          url: songInfo.videoDetails.video_url,,
+          thumbnail: songInfo.videoDetails.thumbnail.thumbnails[0].url,
+          duration: convertMS(songInfo.videoDetails.lengthSeconds, { verbose: true, compact: false, secondsDecimalDigits: 0 }),
           playUser: msg.author.id,
           vote: []
         };
@@ -75,6 +78,7 @@ module.exports = {
           channel: songInfo.videoDetails.author.name,
           url: songInfo.videoDetails.video_url,
           thumbnail: songInfo.videoDetails.thumbnail.thumbnails[0].url,
+          duration: convertMS(songInfo.videoDetails.lengthSeconds, { verbose: true, compact: false, secondsDecimalDigits: 0 }),
           playUser: msg.author.id,
           vote: []
         };
