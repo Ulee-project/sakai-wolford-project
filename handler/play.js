@@ -54,6 +54,11 @@ module.exports.play = async (song, client, message) => {
         color: 0x7289da,
         title: `${statusAnimation.YouTube} Now playing`,
         description: `**[${song.title}](${song.url}) Requested by: <@${song.playUser}>**`,
+        fields: [
+          {
+            name: "Duration", value: song.duration
+          }
+        ],
         thumbnail: {
           url: song.thumbnail,
         timestamp: new Date(),
