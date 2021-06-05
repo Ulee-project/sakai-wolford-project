@@ -60,7 +60,7 @@ module.exports = {
         song = {
           title: songInfo.videoDetails.title,
           channel: songInfo.videoDetails.author.name,
-          url: songInfo.videoDetails.video_url,,
+          url: songInfo.videoDetails.video_url,
           thumbnail: songInfo.videoDetails.thumbnail.thumbnails[0].url,
           duration: convertMS(songInfo.videoDetails.lengthSeconds, { verbose: true, compact: false, secondsDecimalDigits: 0 }),
           playUser: msg.author.id,
