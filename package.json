@@ -40,7 +40,8 @@
     "canvacord": "^5.0.6",
     "mathjs": "^7.5.1",
     "wikijs": "^6.0.0",
-    "@k3rn31p4nic/google-translate-api": "^1.1.0"
+    "@k3rn31p4nic/google-translate-api": "^1.1.0",
+    "pretty-ms": "^7.0.1"
   },
   "engines": {
     "node": "12.x"
